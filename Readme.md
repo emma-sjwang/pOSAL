@@ -4,7 +4,7 @@
 -------
 
 We provide the Keras implements based on Tensorflow Backend for REFUGE challenge segmentation task.
-<img src="https://github.com/EmmaW8/REFUGE2018_top_code/blob/master/imgs/overview.png" width="800px"/>
+<img src="https://github.com/EmmaW8/pOSAL/blob/master/imgs/overview.png" width="800px"/>
 
       
 ## Getting Started
@@ -28,8 +28,8 @@ We provide the Keras implements based on Tensorflow Backend for REFUGE challenge
 
 - Clone this repo:
 ```bash
-git clone https://github.com/EmmaW8/REFUGE2018_top_code.git
-cd REFUGE2018_top_code
+git clone https://github.com/EmmaW8/pOSAL.git
+cd pOSAL
 python predict.py
 ```
 
