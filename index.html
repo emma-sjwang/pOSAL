@@ -1,0 +1,297 @@
+<html class="gr__richzhang_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./The Unreasonable Effectiveness of Deep Networks as a Perceptual Metric_files/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	h1 {
+		font-weight:300;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.rounded {
+		border: 0px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+
+  
+		<title>Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation</title>
+		<meta property="og:image" content="https://yulequan.github.io//ec-net/figures/teaser_one_column_high.png">
+		<meta property="og:title" content="Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation. In ***, 2018.">
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+    <br>
+          <center>
+          	<span style="font-size:34px">Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation</span><br>
+	  		  
+	  		  <br>
+
+	  		  <table align="center" width="900px">
+	  			  <tbody><tr>
+	  	              <td align="center" width="150px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="https://emmaw8.github.io/ShujunWang/">Shujun Wang</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="150px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="http://appsrv.cse.cuhk.edu.hk/~lqyu/">Lequan Yu</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+			      <td align="center" width="200px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="http://appsrv.cse.cuhk.edu.hk/~xinyang/">Xin Yang</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="200px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="http://www.cse.cuhk.edu.hk/~cwfu/">Chi-Wing Fu</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              
+	  	              <td align="center" width="200px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="http://www.cse.cuhk.edu.hk/~pheng/">Pheng-Ann Heng</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  			  </tr>
+			  </tbody></table>
+	  		  
+			  <table align="center" width="800px"><tbody>
+			  <tr>
+	  	              <td align="center" width="50px"></td>
+	  	              <td align="center" width="400px">
+	  					<center>
+				          	<span style="font-size:18px"><sup></sup>The Chinese University of Hong Kong</span>
+		  		  		</center>
+	  	              <td align="center" width="50px"></td>
+			  </tr>
+			  </tbody></table>
+			  
+			  <table align="center" width="800px"><tbody>
+			  
+			  </tbody></table>
+
+			  <br>
+
+	  		  <table align="center" width="1100px">
+	  			  <tbody><tr>
+	  	              <td align="center" width="275px">
+	  					<center>
+				          	<span style="font-size:18px"></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="225px">
+	  					<center>
+	  						<span style="font-size:22px">*** 2018<a href="***"> [Paper]</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="225px">
+	  					<center>
+	  						<span style="font-size:22px">Code <a href="https://github.com/EmmaW8/pOSAL"> [GitHub]</a></span>
+		  		  		</center>
+		  		  	  </td>
+
+	  	              <td align="center" width="275px">
+	  					<center>
+				          	<span style="font-size:18px"></span>
+		  		  		</center>
+		  		  	  </td>
+			  </tr></tbody></table>
+          </center>
+
+          <br>
+  		  <table align="center" width="1100px">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="figures/performance_drop.jpg" width="400px">
+  	                	<br>
+					</center>
+  	              </td>
+  	              </tr>
+  	              </tbody></table>
+
+  		  <br>
+		  <hr>
+
+  		  <center><h1>Abstract</h1></center>
+		Glaucoma is a leading cause of irreversible blindness. Accurate segmentation of the optic disc (OD) and cup (OC) from fundus images is beneficial to glaucoma screening and diagnosis. Recently, convolutional neural networks demonstrate promising progress in joint OD and OC segmentation. However, affected by the domain shift among different datasets, deep networks are severely hindered in generalizing across different scanners and institutions. In this paper, we present a novel patch-based Output Space Adversarial Learning framework (\textit{p}OSAL) to jointly and robustly segment the OD and OC from different fundus image datasets. We first devise a light-weight and efficient segmentation network as a backbone. Considering the specific morphology of OD and OC, a novel morphology-aware segmentation loss is proposed to guide the network to generate accurate and smooth segmentation. Our \textit{p}OSAL framework then exploits unsupervised domain adaptation to address the domain shift challenge by encouraging the segmentation in the target domain to be similar to the source ones. Since the whole-segmentation-based adversarial loss is insufficient to drive the network to capture segmentation details, we further design the \textit{p}OSAL in a patch-based fashion to enable fine-grained discrimination on local segmentation details. We extensively evaluate our \textit{p}OSAL framework and demonstrate its effectiveness in significantly improving segmentation on three public retinal fundus image datasets, \ie, Drishti-GS, RIM-ONE-r3 and REFUGE. Furthermore, our \textit{p}OSAL framework achieved the first place in the OD and OC segmentation tasks in \textit{MICCAI 2018 Retinal Fundus Glaucoma Challenge}.
+
+		<br><br><hr>
+
+		<center><h1>Overview</h1></center>
+  		    <table align="center" width="900px">
+  			<tbody>
+  			  	<tr>
+  			  		<td align="center"><img class="round" style="width:900px" src="figures/overview.png"></td>	
+			  	</tr>
+			  	<tr>
+			  		<td align="center"><h3>Pipeline of pOSAL</h3></td>
+			  	</tr>
+			</tbody>
+			</table>
+			
+			<br>
+
+			<table align="center" width="900px">
+  			<tbody>
+  			  	<tr>
+  			  		<td align="center"><img class="round" style="width:500px" src="figures/segmentation_net.png"></td>	
+			  	</tr>
+			  	<tr>
+			  		<td align="center"><h3>Segmentation Network Architecture</h3></td>
+			  	</tr>
+
+			</tbody>
+			</table>
+		  <br>
+<hr>
+		<center> <h1> Segmentation results on Drishti-GS dataset. <br></h1></center>
+  	<!--
+	We demonstrate the quality of our method by applying it to consolidate point sets and reconstruct surfaces. Our method produces consolidated point sets and improves the surface reconstruction quality, particularly on preserving the edges. -->
+
+  		<br><br>
+  		<table align="center" width="600px">
+			  <tbody><tr>
+				  <td><span style="font-size:24pt"><center>
+				  	<img class="paper-big" style="width:800px" src="figures/results.png">
+  	              </center></span></td>
+              </tr>
+  		</tbody></table> 
+
+  		  <center><h1>More Results Download Links</h1></center>
+			<center>
+  		  	Datasets:  <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/GS_test.zip">[Drishti-GS]</a>. 
+			     <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/RIM-ONE_test.zip">[RIM-ONE-r3]</a>
+			     <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/REFUGE_test_dataset.zip">[REFUGE test]</a>
+			</center>
+
+		  <br><br>
+
+		  <hr>
+
+		
+  
+  		<br>
+ 
+
+		  
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="400px"><left>
+	  		<center><h1>Acknowledgements</h1></center>
+	  		  <!-- We thank anonymous reviewers for the comments and suggestions. The work is supported by the Research Grants Council of the Hong Kong Special Administrative Region (Project no. GRF 14225616), the Shenzhen Science and Technology Program (No. JCYJ20170413162617606 and No. JCYJ20160429190300857), and the CUHK strategic recruitment fund.
+-->
+			</left></td></tr>
+			</tbody></table>
+		<br>
+		<br>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+</body></html>
