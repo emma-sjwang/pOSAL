@@ -23,7 +23,7 @@
 		-webkit-border-radius: 10px ;
 		padding: 20px;
 	}
-
+	
 	video.header-vid {
 		height: 140px;
 		border: 1px solid black;
@@ -31,7 +31,7 @@
 		-moz-border-radius: 10px ;
 		-webkit-border-radius: 10px ;
 	}
-
+	
 	img.header-img {
 		height: 140px;
 		border: 1px solid black;
@@ -39,14 +39,14 @@
 		-moz-border-radius: 10px ;
 		-webkit-border-radius: 10px ;
 	}
-
+	
 	img.rounded {
 		border: 0px solid #eeeeee;
 		border-radius: 10px ;
 		-moz-border-radius: 10px ;
 		-webkit-border-radius: 10px ;
 	}
-
+	
 	a:link,a:visited
 	{
 		color: #1367a7;
@@ -55,13 +55,13 @@
 	a:hover {
 		color: #208799;
 	}
-
+	
 	td.dl-link {
 		height: 160px;
 		text-align: center;
 		font-size: 22px;
 	}
-
+	
 	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
 		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
@@ -78,15 +78,15 @@
 		margin-left: 10px;
 		margin-right: 45px;
 	}
-
+	
 	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
 		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-
+	
 		margin-left: 10px;
 		margin-right: 45px;
 	}
-
+	
 	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
 		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
@@ -99,13 +99,13 @@
 		margin-right: 30px;
 		margin-bottom: 5px;
 	}
-
+	
 	.vert-cent {
 		position: relative;
 	    top: 50%;
 	    transform: translateY(-50%);
 	}
-
+	
 	hr
 	{
 		border: 0;
@@ -115,7 +115,7 @@
 </style>
 
 
-  
+
 		<title>Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation</title>
 		<meta property="og:image" content="https://yulequan.github.io//ec-net/figures/teaser_one_column_high.png">
 		<meta property="og:title" content="Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation. In ***, 2018.">
@@ -127,12 +127,12 @@
           	<span style="font-size:34px">Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation</span><br>
 	  		  
 	  		  <br>
-
+	
 	  		  <table align="center" width="900px">
 	  			  <tbody><tr>
 	  	              <td align="center" width="150px">
 	  					<center>
-	  						<span style="font-size:22px"><a href="https://emmaw8.github.io/ShujunWang/">Shujun Wang</a><sup></sup></span>
+	  						<span style="font-size:22px"><a href="https://emmaw8.github.io">Shujun Wang</a><sup></sup></span>
 		  		  		</center>
 		  		  	  </td>
 	  	              <td align="center" width="150px">
@@ -173,9 +173,9 @@
 			  <table align="center" width="800px"><tbody>
 			  
 			  </tbody></table>
-
+	
 			  <br>
-
+	
 	  		  <table align="center" width="1100px">
 	  			  <tbody><tr>
 	  	              <td align="center" width="275px">
@@ -185,7 +185,7 @@
 		  		  	  </td>
 	  	              <td align="center" width="225px">
 	  					<center>
-	  						<span style="font-size:22px">IEEE TMI 2019<a href="https://emmaw8.github.io/ShujunWang/publications/pOSAL.pdf"> [Paper]</a></span>
+	  						<span style="font-size:22px">IEEE TMI 2019<a href="https://arxiv.org/abs/1902.07519"> [Paper]</a></span>
 		  		  		</center>
 		  		  	  </td>
 	  	              <td align="center" width="225px">
@@ -193,16 +193,16 @@
 	  						<span style="font-size:22px">Code <a href="https://github.com/EmmaW8/pOSAL"> [GitHub]</a></span>
 		  		  		</center>
 		  		  	  </td>
-
+	
 	  	              <td align="center" width="275px">
 	  					<center>
 				          	<span style="font-size:18px"></span>
 		  		  		</center>
 		  		  	  </td>
 			  </tr></tbody></table>
-          </center>
-
-          <br>
+	      </center>
+	
+	      <br>
   		  <table align="center" width="1100px">
   			  <tbody><tr>
   	              <td width="400px">
@@ -219,9 +219,9 @@
 
   		  <center><h1>Abstract</h1></center>
 		Glaucoma is a leading cause of irreversible blindness. Accurate segmentation of the optic disc (OD) and cup (OC) from fundus images is beneficial to glaucoma screening and diagnosis. Recently, convolutional neural networks demonstrate promising progress in joint OD and OC segmentation. However, affected by the domain shift among different datasets, deep networks are severely hindered in generalizing across different scanners and institutions. In this paper, we present a novel patch-based Output Space Adversarial Learning framework (\textit{p}OSAL) to jointly and robustly segment the OD and OC from different fundus image datasets. We first devise a light-weight and efficient segmentation network as a backbone. Considering the specific morphology of OD and OC, a novel morphology-aware segmentation loss is proposed to guide the network to generate accurate and smooth segmentation. Our \textit{p}OSAL framework then exploits unsupervised domain adaptation to address the domain shift challenge by encouraging the segmentation in the target domain to be similar to the source ones. Since the whole-segmentation-based adversarial loss is insufficient to drive the network to capture segmentation details, we further design the \textit{p}OSAL in a patch-based fashion to enable fine-grained discrimination on local segmentation details. We extensively evaluate our \textit{p}OSAL framework and demonstrate its effectiveness in significantly improving segmentation on three public retinal fundus image datasets, \ie, Drishti-GS, RIM-ONE-r3 and REFUGE. Furthermore, our \textit{p}OSAL framework achieved the first place in the OD and OC segmentation tasks in \textit{MICCAI 2018 Retinal Fundus Glaucoma Challenge}.
-
+	
 		<br><br><hr>
-
+	
 		<center><h1>Overview</h1></center>
   		    <table align="center" width="900px">
   			<tbody>
@@ -233,9 +233,9 @@
 			  	</tr>
 			</tbody>
 			</table>
-			
-			<br>
 
+			<br>
+	
 			<table align="center" width="900px">
   			<tbody>
   			  	<tr>
@@ -264,21 +264,22 @@
 
   		  <center><h1>More Results Download Links</h1></center>
 			<center>
-  		  	Datasets:  <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/GS_test.zip">[Drishti-GS]</a>. 
+  		  	Datasets:  <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/GS_test.zip">[Drishti-GS]</a> 
 			     <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/RIM-ONE_test.zip">[RIM-ONE-r3]</a>
 			     <span style="font-size:16px"><a href="https://github.com/EmmaW8/pOSAL/raw/master/results/REFUGE_test_dataset.zip">[REFUGE test]</a>
 			</center>
 
 		  <br><br>
-
+	
 		  <hr>
 
-		
-  
-  		<br>
- 
 
-		  
+​		
+
+  		<br>
+
+
+​		  
   		  <table align="center" width="1100px">
   			<tbody>
 			<tr><td width="400px"><left>
