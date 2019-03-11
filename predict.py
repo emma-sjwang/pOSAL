@@ -13,6 +13,8 @@ from Model.models import *
 
 if __name__ == '__main__':
 
+
+    # specify which GPU No. will you use
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     t0 = timeit.default_timer()
