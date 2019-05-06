@@ -24,7 +24,7 @@ We provide the Keras implements based on Tensorflow Backend for REFUGE challenge
 - matplotlib
 
 
-### Running
+### Running Evaluation
 
 - Clone this repo:
 ```bash
@@ -32,6 +32,14 @@ git clone https://github.com/EmmaW8/pOSAL.git
 cd pOSAL
 python predict.py
 ```
+
+### Running Training for Dri-GS dataset
+```bash
+python train_DGS.py
+python test_DGS.py
+```
+
+Before running test, please check whether the model weight path is correct.
 
 
 

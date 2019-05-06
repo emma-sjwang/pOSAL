@@ -13,6 +13,27 @@ def dice_loss(y_true, y_pred):
     return 0.6*(1-dice_coeff(y_true[:,:,:,1], y_pred[:,:,:,1]))+0.4*(1-dice_coeff(y_true[:,:,:, 0], y_pred[:,:,:, 0]))
 
 
+def dice_coef_disc(y_true, y_pred):
+    y_true_disc = y_true[:, :, :, 0]
+    y_pred_disc = y_pred[:, :, :, 0]
+    axis = tuple(range(1, len(y_true_disc.shape)))
+    y_pred_disc = K.cast(y_pred_disc > 0.5, 'float32')
+    intersection = K.sum(y_true_disc * y_pred_disc, axis=axis)
+    dice_loss_disc = (2 * intersection + K.epsilon()) / (
+            K.sum(y_true_disc * y_true_disc, axis=axis) + K.sum(y_pred_disc* y_pred_disc, axis=axis) + K.epsilon())
+    return K.mean(dice_loss_disc)
+
+
+def dice_coef_cup(y_true, y_pred):
+    y_true_cup = y_true[:,:,:, 1]
+    y_pred_cup = y_pred[:,:,:, 1]
+    axis = tuple(range(1, len(y_true_cup.shape)))
+    y_pred_cup = K.cast(y_pred_cup > 0.5, 'float32')
+    intersection = K.sum(y_true_cup * y_pred_cup, axis=axis)
+    dice_loss_cup = (2 * intersection + K.epsilon()) / (K.sum(y_true_cup*y_true_cup, axis=axis) + K.sum(y_pred_cup*y_pred_cup, axis=axis) + K.epsilon())
+    return K.mean(dice_loss_cup)
+
+
 def smooth_loss(y_true, y_pred):
     H = y_pred.shape[-3]
     W = y_pred.shape[-2]

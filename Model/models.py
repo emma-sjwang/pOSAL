@@ -638,7 +638,8 @@ def Model_CupSeg(pretrained_weights='pascal_voc', input_tensor=None, input_shape
     model = Model(inputs, x, name='deeplabv3')
 
     model.compile(optimizer=Adam(lr=lr), loss=Dice_Smooth_loss, \
-                  metrics=[smooth_loss, dice_loss])
+                  metrics=[dice_coef_disc, dice_coef_cup, smooth_loss, dice_loss])
+
 
     return model
 
