@@ -48,3 +48,15 @@ Before running test, please check whether the model weight path is correct.
 Some codes are revised according to selimsef/dsb2018_topcoders and HzFu/MNet_DeepCDR.
 Thank them very much.
  
+
+### Citation
+```
+@article{wang2019patch,
+  title={Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation},
+  author={Wang, Shujun and Yu, Lequan and Yang, Xin and Fu, Chi-Wing and Heng, Pheng-Ann},
+  journal={IEEE transactions on medical imaging},
+  pages={To appear},
+  publisher={IEEE},
+  year={2019}
+}
+```  
