@@ -52,11 +52,14 @@ Thank them very much.
 ### Citation
 ```
 @article{wang2019patch,
-  title={Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation},
+  journal={IEEE Transactions on Medical Imaging},
+  title={Patch-Based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation},
   author={Wang, Shujun and Yu, Lequan and Yang, Xin and Fu, Chi-Wing and Heng, Pheng-Ann},
-  journal={IEEE transactions on medical imaging},
-  pages={To appear},
+  year={2019},
+  volume={38},
+  number={11},
+  pages={2485-2495},
   publisher={IEEE},
-  year={2019}
-}
+  doi={10.1109/TMI.2019.2899910},
+  }
 ```  
