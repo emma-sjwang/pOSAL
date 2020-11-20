@@ -8,20 +8,20 @@ We provide the Keras implements based on Tensorflow Backend for REFUGE challenge
 
       
 ## Getting Started
+
+### Install requirments
+``` bash
+conda create -n posal python=3.5
+conda activate posal
+pip install keras==2.2.0
+pip insatll tensorflow-gpu==1.4.0
+conda install tqdm
+conda install -c anaconda scikit-image
+conda install opencv
+```
 ### Prerequisites
 
-- python 3.5
-- tensorflow 1.4.0
-- keras 2.2.0
-- GPU, CUDA
-
-### Packages
-
-- tqdm
-- skimage
-- opencv
-- scipy
-- matplotlib
+- GPU, CUDA=9.0
 
 
 ### Running Evaluation
@@ -30,22 +30,29 @@ We provide the Keras implements based on Tensorflow Backend for REFUGE challenge
 ```bash
 git clone https://github.com/EmmaW8/pOSAL.git
 cd pOSAL
-python predict.py
+```
+
+### To reproduce the results for the rank in REFUGE challenge in MICCAI 2018, please do
+``` bash
+python predict.py 0 # 0 is the avaliable GPU id, change is neccesary
+
 ```
 
 ### Running Training for Dri-GS dataset
+
+Remember to check/change the data path and weight path
+
 ```bash
-python train_DGS.py
-python test_DGS.py
+python train_DGS.py 0
+python test_DGS.py 0
 ```
 
-Before running test, please check whether the model weight path is correct.
-
+### The CDR values used for glaucoma diagnsis are generated with MATLAB.
 
 
 
 **Acknowledge**
-Some codes are revised according to selimsef/dsb2018_topcoders and HzFu/MNet_DeepCDR.
+Some codes are revised according to selimsef/dsb2018_topcoders, [HzFu/MNet_DeepCDR](https://github.com/HzFu/MNet_DeepCDR) and [evaluateion code ](https://github.com/ignaciorlando/refuge-evaluation).
 Thank them very much.
  
 

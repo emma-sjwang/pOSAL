@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 import tensorflow as tf
-
+import sys
 
 def lr_poly(base_lr, iter, max_iter, power):
     return base_lr * ((1 - float(iter) / max_iter) ** (power))
@@ -37,7 +37,8 @@ def change_learning_rate_D(model, base_lr, iter, max_iter, power):
 if __name__ == '__main__':
 
     ''' parameter setting '''
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    ### Example: python train_DGS.py 0
+    os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[1]
 
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True

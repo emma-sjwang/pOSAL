@@ -20,10 +20,11 @@ import os
 from Model.models import Model_CupSeg, Model_DiscSeg
 from keras.applications import imagenet_utils
 from skimage.measure import label, regionprops
-from Utils.utils import save_img, save_per_img
+from Utils.utils import save_img, save_img
 from Utils.evaluate_segmentation import evaluate_segmentation_results
 import random
 import tensorflow as tf
+import sys
 
 
 def dice_coef(y_true, y_pred):
@@ -53,11 +54,12 @@ def calculate_dice(mask_path, prediction_path):
 if __name__ == '__main__':
 
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-    os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+    os.environ['CUDA_VISIBLE_DEVICES'] = sys.argv[1]
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     session = tf.Session(config=config)
 
+    ##################################
     ''' parameters '''
     DiscROI_size = 640
     DiscSeg_size = 640
@@ -67,6 +69,8 @@ if __name__ == '__main__':
     save_data_type = 'png'
     dataset = "Drishti-GS"
 
+    ###################################
+
     scale = False
     both = True
 
@@ -75,12 +79,13 @@ if __name__ == '__main__':
         data_type = '.jpg'
         phase = "test0"
 
-    data_img_path = '../data/' + dataset + '/'+ phase +'/image/'
-    data_save_path = './data/' + dataset + '/' + phase + '/OSAL_epoch100/'
-    mask_path = '../data/' + dataset + '/'+ phase +'/mask/'
+    data_img_path = './data/' + dataset + '/'+ phase +'/image/'
+    data_save_path = './results/' + dataset + '/' + phase + '/OSAL_epoch100/'
+    mask_path = './data/' + dataset + '/'+ phase +'/mask/'
 
-    # change location to wherever you like
+    ###### change location to wherever you like
     load_from = "./weights/" + dataset + "/DA_patch/Generator/generator_100.h5"
+    # load_from = "./weights/weights1.h5"
 
     if not os.path.exists(data_save_path):
         print("Creating save path {}\n\n".format(data_save_path))
@@ -92,7 +97,7 @@ if __name__ == '__main__':
 
     ''' create model and load weights'''
     DiscSeg_model = Model_DiscSeg(inputsize=DiscSeg_size)
-    DiscSeg_model.load_weights('Model_DiscSeg_ORIGA_pretrain.h5')  # download from M-Net
+    DiscSeg_model.load_weights('weights/Model_DiscSeg_pretrain.h5')  # download from M-Net
 
     CDRSeg_model = Model_CupSeg(input_shape = (CDRSeg_size, CDRSeg_size, 3), classes=2, backbone='mobilenetv2')
     CDRSeg_model.load_weights(load_from)
@@ -106,7 +111,7 @@ if __name__ == '__main__':
         # Disc region detection by U-Net
         temp_img = transform.resize(org_img, (DiscSeg_size, DiscSeg_size, 3))*255
         temp_img = np.reshape(temp_img, (1,) + temp_img.shape)
-        [prob_6, prob_7, prob_8, prob_9, prob_10] = DiscSeg_model.predict([temp_img])
+        prob_10 = DiscSeg_model.predict([temp_img])
 
         disc_map = BW_img(np.reshape(prob_10, (DiscSeg_size, DiscSeg_size)), 0.5)
         regions = regionprops(label(disc_map))
@@ -137,10 +142,10 @@ if __name__ == '__main__':
         if dataset == "refuge":
             img_name = temp_txt[0][:-4] + '.bmp'
 
-        save_per_img(org_img, disc_region, mask_path=mask_path,
+        save_img(org_img, mask_path=mask_path,
                  data_save_path=data_save_path, img_name=img_name, prob_map=prob_map, err_coord=err_coord,
                  crop_coord=crop_coord, DiscROI_size=DiscROI_size,
                  org_img_size=org_img.shape, threshold=0.75, pt=False, ext=save_data_type)
-    evaluate_segmentation_results(data_save_path, mask_path,ext='png', output_path='./')
-    print(load_from)
-    print(data_save_path)
+    evaluate_segmentation_results(data_save_path, mask_path, ext='png', output_path='./')
+    print('Weight lis loaded from:', load_from)
+    print('Results has been saved to', data_save_path)

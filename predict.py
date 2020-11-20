@@ -9,13 +9,17 @@ from skimage import transform
 import cv2
 import random
 from Model.models import *
-
+import sys
 
 if __name__ == '__main__':
-
+    '''
+    This file is to show how to generate the results in the REFUGE challenge in MICCAI 2018.
+    We used Test-time augmentation to generate 8 predictions for each image and then average them.
+    '''
 
     # specify which GPU No. will you use
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    ### Example: python predict.py 1
+    os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[1]
 
     t0 = timeit.default_timer()
 
@@ -174,6 +178,7 @@ if __name__ == '__main__':
 
     elapsed = timeit.default_timer() - t0
     print('==>[REFUGE challenge]\tTime: {:.3f} min'.format(elapsed / 60))
+    print('Segmentation results have been saved in fold:', data_save_path)
 
 
 

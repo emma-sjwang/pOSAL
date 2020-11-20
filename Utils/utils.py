@@ -58,9 +58,9 @@ def get_largest_fillhole(binary):
     return scipy.ndimage.binary_fill_holes(np.asarray(binary).astype(int))
 
 
-def save_img(org_img, mask_path, data_save_path, img_name, prob_map, err_coord, crop_coord, DiscROI_size, org_img_size, threshold=0.5, pt=False):
+def save_img(org_img, mask_path, data_save_path, img_name, prob_map, err_coord, crop_coord, DiscROI_size, org_img_size, threshold=0.5, pt=False, ext='png'):
     path = os.path.join(data_save_path, img_name)
-    path0 = os.path.join(data_save_path+'/visulization/', img_name.split('.')[0]+'.png')
+    path0 = os.path.join(data_save_path+'/visulization/', img_name.split('.')[0]+'.'+ext)
     if not os.path.exists(os.path.dirname(path0)):
         os.makedirs(os.path.dirname(path0))
 
@@ -214,3 +214,4 @@ def disc_crop(org_img, DiscROI_size, C_x, C_y, fill_value=0):
                                                                           crop_coord[2]:crop_coord[3], ]
 
     return disc_region, err_coord, crop_coord
+
