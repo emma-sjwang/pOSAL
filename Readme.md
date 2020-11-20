@@ -48,6 +48,11 @@ python test_DGS.py 0
 ```
 
 ### The CDR values used for glaucoma diagnsis are generated with MATLAB.
+```
+cd matlab-code
+```
+
+Please change the input and output path in the `generate_CDR_values.m` file.
 
 
 
